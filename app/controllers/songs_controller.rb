@@ -50,6 +50,8 @@ class SongsController < ApplicationController
   end
 
   patch '/songs' do
+    @song = Song.find(params[:id])
+
       binding.pry
 
     redirect to "/songs/#{@song.slug}"
