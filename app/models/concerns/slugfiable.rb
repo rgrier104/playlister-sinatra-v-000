@@ -9,7 +9,7 @@ module Slugifiable
 
   module ClassMethods
     def self.find_by_slug(slug)
-      Artist.all.find do |artist|
+      Class.all.find do |artist|
         artist.slug == slug
       end
     end
