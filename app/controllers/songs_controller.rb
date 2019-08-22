@@ -59,7 +59,7 @@ class SongsController < ApplicationController
     else
       Artist.find_by(name: params[:artist][:name]).songs << @song
     end
-    binding.pry
+
     flash[:message] = "Successfully updated song."
     redirect to "/songs/#{@song.slug}"
   end
