@@ -29,7 +29,7 @@ binding.pry
       @artist = Artist.create(name: params[:artist][:name])
       @artist.songs << @song
     end
-
+binding.pry
     redirect to '/songs'
   end
 
