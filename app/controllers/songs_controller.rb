@@ -19,7 +19,8 @@ class SongsController < ApplicationController
   end
 
   post '/songs' do
-    
+    Artist.all.find do |artist|
+      artist.slug == params[artist[name].slug]
     @song = Song.create(params[:song])
     erb :'/songs/index'
   end
