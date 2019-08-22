@@ -21,7 +21,7 @@ class SongsController < ApplicationController
   post '/songs' do
 
     artist = Artist.all.find do |artist|
-      artist.name.slug == params[:artist][:name].downcase.gsub(' ','-')
+      artist.slug == params[:artist][:name].downcase.gsub(' ','-')
     end
     binding.pry
 
