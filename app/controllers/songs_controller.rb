@@ -29,7 +29,7 @@ class SongsController < ApplicationController
       @artist = Artist.create(name: params[:artist][:name])
       @artist.songs << @song
     end
-
+binding.pry
     params[:genres].each do |genre|
       @song.genres << genre
     end
