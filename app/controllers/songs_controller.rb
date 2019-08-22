@@ -33,7 +33,7 @@ class SongsController < ApplicationController
     params[:genres].each do |genre|
       @song.genres << Genre.find(genre)
     end
-    binding.pry
+
     redirect to "/songs/#{@song.slug}"
   end
 
