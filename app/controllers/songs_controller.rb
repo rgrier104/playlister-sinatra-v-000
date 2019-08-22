@@ -24,7 +24,11 @@ class SongsController < ApplicationController
       artist.slug == params[:artist][:name].downcase.gsub(' ','-')
     end
     if artist
-      @
+      @song.artist_id = artist.id
+    else
+      @artist = Artist.create(name: params[:artist][:name])
+      @artist.songs << @song
+    end
 
     erb :'/songs/index'
   end
