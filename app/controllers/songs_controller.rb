@@ -60,6 +60,11 @@ class SongsController < ApplicationController
       Artist.find_by(name: params[:artist][:name]).songs << @song
     end
 
+    @song.genres.clear
+    params[:genres].each do |genre|
+      @song.genres << Genre.find(genre)
+    end
+
     flash[:message] = "Successfully updated song."
     redirect to "/songs/#{@song.slug}"
   end
