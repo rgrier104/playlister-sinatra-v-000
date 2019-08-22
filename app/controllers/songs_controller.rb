@@ -23,7 +23,6 @@ class SongsController < ApplicationController
     artist = Artist.all.find do |artist|
       artist.slug == params[:artist][:name].downcase.gsub(' ','-')
     end
-    binding.pry
 
     erb :'/songs/index'
   end
