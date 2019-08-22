@@ -19,11 +19,12 @@ class SongsController < ApplicationController
   end
 
   post '/songs' do
-
+    @song = Song.create(params["song"])
     artist = Artist.all.find do |artist|
       artist.slug == params[:artist][:name].downcase.gsub(' ','-')
     end
-    binding.pry
+    if artist
+      @
 
     erb :'/songs/index'
   end
