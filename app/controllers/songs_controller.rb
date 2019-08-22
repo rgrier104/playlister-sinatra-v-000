@@ -21,7 +21,7 @@ class SongsController < ApplicationController
   post '/songs' do
 
     artist = Artist.all.find do |artist|
-      artist.slug == params[:artist[:name]]
+      artist.slug == params[:artist[:name]
     end
     binding.pry
 
