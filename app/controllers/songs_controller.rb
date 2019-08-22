@@ -23,6 +23,10 @@ class SongsController < ApplicationController
     erb :'/songs/show'
   end
 
+  get '/songs/:slug/edit' do
+    erb :'/songs/edit'
+  end
+
   post '/songs' do
     @song = Song.create(params["song"])
     artist = Artist.all.find do |artist|
@@ -44,7 +48,7 @@ class SongsController < ApplicationController
 
   patch '/songs' do
 
-    
+
     redirect to "/songs/#{@song.slug}"
   end
 end
