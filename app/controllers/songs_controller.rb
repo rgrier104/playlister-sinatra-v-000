@@ -24,7 +24,7 @@ binding.pry
       artist.slug == params[:artist][:name].downcase.gsub(' ','-')
     end
     if artist
-      @artist.songs << @song
+      artist.songs << @song
     else
       @artist = Artist.create(name: params[:artist][:name])
       @artist.songs << @song
