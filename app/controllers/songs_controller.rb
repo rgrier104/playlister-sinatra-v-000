@@ -54,7 +54,8 @@ class SongsController < ApplicationController
     @song = Song.find_by(params[:name])
     @song.update(params[:song])
     if !Artist.find_by(name: params[:artist][:name])
-      @song.artist = Artist.create(name: params[:artist][:name])
+      @artist = Artist.create(name: params[:artist][:name])
+      @artist.songs << @song
     else
       @song.artist = Artist.find_by(name: params[:artist][:name])
     end
