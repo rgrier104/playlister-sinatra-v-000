@@ -19,9 +19,10 @@ class SongsController < ApplicationController
   end
 
   post '/songs' do
-    Artist.all.find do |artist|
+    artist = Artist.all.find do |artist|
       artist.slug == params[artist[name]].slug
     end
+    binding.pry
     @song = Song.create(params[:song])
     erb :'/songs/index'
   end
