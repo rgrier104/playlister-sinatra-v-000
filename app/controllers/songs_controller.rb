@@ -57,7 +57,7 @@ class SongsController < ApplicationController
       @artist = Artist.create(name: params[:artist][:name])
       @artist.songs << @song
     else
-      @song.artist = Artist.find_by(name: params[:artist][:name])
+      Artist.find_by(name: params[:artist][:name]).songs << @song
     end
     binding.pry
     flash[:message] = "Successfully updated song."
