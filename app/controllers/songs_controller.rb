@@ -33,7 +33,7 @@ class SongsController < ApplicationController
     params[:genres].each do |genre|
       @song.genres << Genre.find(genre)
     end
- flash[:message] = "Successfully created song."
+    flash[:message] = "Successfully created song."
     redirect to "/songs/#{@song.slug}"
   end
 
