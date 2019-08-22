@@ -53,6 +53,8 @@ class SongsController < ApplicationController
 
     @song = Song.find_by(params[:name])
     @song.update(params[:song])
+    if @song.artist.name == params[:artist][:name]
+
 
     redirect to "/songs/#{@song.slug}"
   end
