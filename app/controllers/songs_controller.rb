@@ -52,7 +52,7 @@ class SongsController < ApplicationController
   patch '/songs' do
 
     @song = Song.find_by(params[:name])
-      binding.pry
+    @song.update(params[:song])
 
     redirect to "/songs/#{@song.slug}"
   end
