@@ -1,7 +1,7 @@
 <form action='/songs' method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
 
-  <label for="song[name]">Edit Name: </label>
+  <label for="song[name]">Name: </label>
   <input name="song[name]" id="Name" type="text">
   <br>
 
@@ -11,7 +11,7 @@
     <% end %>
 <br>
 
-  <label for="artist[name]">Artist Name: </label>
+  <label for="artist[name]">Edit Artist Name: </label>
   <input type="text" name="artist[name]" id="Artist Name">
 
   <input type="submit" name="submit" id="Create">
