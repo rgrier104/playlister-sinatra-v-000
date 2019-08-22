@@ -57,7 +57,6 @@ class SongsController < ApplicationController
       @song.artist = Artist.create(name: params[:artist][:name])
     end
 
-
     redirect to "/songs/#{@song.slug}"
   end
 end
