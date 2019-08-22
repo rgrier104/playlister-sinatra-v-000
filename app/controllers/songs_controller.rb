@@ -26,6 +26,7 @@ class SongsController < ApplicationController
   get '/songs/:slug/edit' do
     @song = Song.find_by_slug(params[:slug])
     @genres = Genre.all
+
     erb :'/songs/edit'
   end
 
@@ -49,7 +50,7 @@ class SongsController < ApplicationController
   end
 
   patch '/songs' do
-
+      binding.pry
 
     redirect to "/songs/#{@song.slug}"
   end
