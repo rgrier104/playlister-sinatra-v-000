@@ -30,6 +30,10 @@ class SongsController < ApplicationController
       @artist.songs << @song
     end
 
+    @params[:genres].each do |genre|
+      @song.genres << genre
+    end
+
     redirect to "/songs/#{@song.slug}"
   end
 
