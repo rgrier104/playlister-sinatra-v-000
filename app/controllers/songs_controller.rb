@@ -24,7 +24,7 @@ class SongsController < ApplicationController
       artist.slug == params[artist[name]].slug
     end
 
-    @song = Song.create(params[:song])
+
     erb :'/songs/index'
   end
 
