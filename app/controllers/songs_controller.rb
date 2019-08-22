@@ -30,7 +30,7 @@ class SongsController < ApplicationController
       @artist.songs << @song
     end
 binding.pry
-    redirect to '/songs/#{@song.slug}'
+    redirect to "/songs/#{@song.slug}""
   end
 
 end
