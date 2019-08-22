@@ -30,7 +30,7 @@ class SongsController < ApplicationController
       @artist.songs << @song
     end
 
-    erb :'/songs/index'
+    redirect to '/songs/#{song.slug}'
   end
 
 end
