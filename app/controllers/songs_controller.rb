@@ -14,7 +14,7 @@ class SongsController < ApplicationController
 
   get '/songs/:slug' do
     @song = Song.find_by_slug(params[:slug])
-binding.pry
+
     erb :'/songs/show'
   end
 
@@ -29,7 +29,7 @@ binding.pry
       @artist = Artist.create(name: params[:artist][:name])
       @artist.songs << @song
     end
-binding.pry
+
     redirect to '/songs'
   end
 
