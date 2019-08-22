@@ -30,7 +30,7 @@ class SongsController < ApplicationController
       @artist.songs << @song
     end
 
-    redirect to 'songs/#{@song.slug}'
+    redirect to 'songs/'
   end
 
 end
