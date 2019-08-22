@@ -56,7 +56,7 @@ class SongsController < ApplicationController
     if !Artist.find_by(name: params[:artist][:name])
       @song.artist = Artist.create(name: params[:artist][:name])
     end
-    
+
     flash[:message] = "Successfully updated song."
     redirect to "/songs/#{@song.slug}"
   end
